@@ -134,7 +134,9 @@ class GuideView1: UIView {
                 self.star0.center = CGPoint(x: -self.star0.frame.size.width/2, y: 0.45*self.frame.size.height)
             })
         }) { (finished) in
-            self.star1Aniamtion(delay: 2.0)
+            if finished {
+                self.star1Aniamtion(delay: 2.0)
+            }
         }
     }
     
@@ -151,7 +153,9 @@ class GuideView1: UIView {
                 self.star1.center = CGPoint(x: -self.star1.frame.size.width/2, y: 0.44*self.frame.size.height)
             })
         }) { (finished) in
-            self.star2Aniamtion(delay: 3.0)
+            if finished {
+                self.star2Aniamtion(delay: 3.0)
+            }
         }
     }
     
@@ -168,7 +172,13 @@ class GuideView1: UIView {
                 self.star2.center = CGPoint(x: 0.45*self.frame.size.width, y: 0.49*self.frame.size.height)
             })
         }) { (finished) in
-            self.star0Aniamtion(delay: 1.0)
+            if finished {
+                self.star0Aniamtion(delay: 1.0)
+            }
         }
+    }
+    
+    func destruct(){
+        layer.removeAllAnimations()
     }
 }
